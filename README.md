@@ -4,5 +4,5 @@ Configuration:
 3. Third, change connection string inside web.config
 4. No need to create table. I also added seed for Admin account and Role for both Admin, User. Applied Role Base Authorization
 5. Just run the project and seed will be applied.
-6. Defaul Admin emai: admin@gmail.com and password: M@mun009
+6. Defaul Admin email: admin@gmail.com and password: M@mun009
 7. Admin can add additional admin from admin panel. Password is same for all admin by default.
