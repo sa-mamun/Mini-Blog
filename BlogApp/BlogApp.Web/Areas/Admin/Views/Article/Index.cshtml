@@ -1,0 +1,116 @@
+﻿@model BlogApp.Web.Areas.Admin.Models.ModifiedArticle
+@{
+    ViewBag.Title = "All Article";
+    <link href="~/Content/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+}
+
+<div id="content">
+    <div class="container-fluid" style="width:100%;">
+        <!-- Page Heading -->
+        <div class="mt-5">
+            <h1 class="h3 mb-2 mt-5 text-gray-800">Article Table</h1>
+            <hr />
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Article Information</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="modal-default" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Article</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                @using (Html.BeginForm("Delete", "Article", FormMethod.Post, new { id = "dlt_form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id, new { id = "deltebtn" })
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn_delete" class="btn btn-primary">Yes, Delete!</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section PageScript
+{
+    <!-- Page level plugins -->
+    <script src="~/Content/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#dataTable').DataTable({
+                "ajax": {
+                    "url": "/Admin/Article/GetArticle",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "Name" },
+                    { "data": "Category" },
+                    {
+                        "data": "Id", "render": function (data) {
+                            return `<a class="btn btn-primary btn-sm" style="color:white;" onclick="window.location.href='/Admin/Article/Edit/${data}'" value='${data}'> Edit</a><a class="btn btn-danger btn-sm show-bs-modal" style="color:white;margin-left:5px;" data-id='${data}' value='${data}'> Delete</a>`;
+                        },
+                        "orderable": false,
+                        "width": "200px"
+                    }
+                ]
+            });
+        });
+
+        $('#dataTable').on('click', '.show-bs-modal', function (event) {
+            var id = $(this).data("id");
+            var modal = $('#modal-default');
+            modal.find('.modal-body p').text("Are you sure want to delete this record?")
+            $('#deltebtn').val(id);
+            modal.modal('show');
+        });
+
+        $('#btn_delete').click(function () {
+            $('#dlt_form').submit();
+        });
+
+    </script>
+
+
+    <!-- Page level custom scripts -->
+    <script src="~/Content/admin/js/demo/datatables-demo.js"></script>
+
+}

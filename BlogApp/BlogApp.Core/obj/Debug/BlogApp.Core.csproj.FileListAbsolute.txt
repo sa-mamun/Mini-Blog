@@ -1,0 +1,40 @@
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.dll.config
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.dll
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.pdb
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\Antlr3.Runtime.dll
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\FluentNHibernate.dll
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\Iesi.Collections.dll
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\NHibernate.dll
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.dll
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.EagerFetching.dll
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\Antlr3.Runtime.xml
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\FluentNHibernate.xml
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\Iesi.Collections.xml
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\NHibernate.xml
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.xml
+D:\NHibernate_Test\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.EagerFetching.xml
+D:\NHibernate_Test\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csprojAssemblyReference.cache
+D:\NHibernate_Test\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csproj.CoreCompileInputs.cache
+D:\NHibernate_Test\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csproj.CopyComplete
+D:\NHibernate_Test\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.dll
+D:\NHibernate_Test\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.pdb
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.dll.config
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.dll
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.pdb
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\Antlr3.Runtime.dll
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\FluentNHibernate.dll
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\Iesi.Collections.dll
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\NHibernate.dll
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.dll
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.EagerFetching.dll
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\Antlr3.Runtime.xml
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\FluentNHibernate.xml
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\Iesi.Collections.xml
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\NHibernate.xml
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.xml
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.EagerFetching.xml
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csprojAssemblyReference.cache
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csproj.CoreCompileInputs.cache
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csproj.CopyComplete
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.dll
+D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.pdb

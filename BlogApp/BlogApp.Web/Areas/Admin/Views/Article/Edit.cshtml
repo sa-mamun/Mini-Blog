@@ -1,0 +1,91 @@
+﻿@model BlogApp.Web.Areas.Admin.Models.EditArticleModel
+@{
+    ViewBag.Title = "Edit Article";
+    List<BlogApp.Core.Entities.Category> categories = ViewBag.Category;
+}
+
+@if (ViewBag.Message != null)
+{
+    <script>
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+    </script>
+}
+
+<div id="content">
+    <div class="container-fluid" style="width:100%;">
+        <!-- Page Heading -->
+        <div>
+            <h1 class="h3 mb-4 text-gray-800">Add Article</h1>
+            <hr />
+        </div>
+        <div class="mb-5">
+            @using (Html.BeginForm("Edit", "Article", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(m => m.Id)
+                <div class="form-group row">
+                    <div class="col-md-1">
+                        @Html.LabelFor(m => m.Title)
+                    </div>
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-1">
+                        @Html.LabelFor(m => m.Description)
+                    </div>
+                    <div class="col-md-5">
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-1">
+                        @Html.LabelFor(m => m.CategoryId)
+                    </div>
+                    <div class="col-md-5">
+                        @Html.DropDownListFor(m => m.CategoryId, new SelectList(categories, "Id", "Name"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CategoryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <input type="submit" class="btn btn-primary" id="btn_submit" value="Update" />
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+@section PageScript {
+
+    <script src="https://cdn.tiny.cloud/1/plj32oi7siumt37tnxcbarowphfd2zt66talpivgjvpt70i5/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+        $(function () {
+            $(document).ready(function () {
+                tinymce.init({
+                    selector: 'textarea',
+                    height: 300,
+                    plugins: [
+                        "advlist autolink lists link image charmap print preview anchor",
+                        "searchreplace visualblocks code fullscreen",
+                        "insertdatetime media table paste imagetools wordcount"
+                    ],
+                    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+                    toolbar_mode: 'floating',
+                    tinycomments_mode: 'embedded',
+                    tinycomments_author: 'Author name',
+                });
+            });
+        });
+    </script>
+
+}

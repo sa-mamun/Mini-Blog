@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    List<BlogApp.Core.Entities.Article> articles = ViewBag.Article;
+}
+
+<div class="jumbotron" style="height: 250px;">
+    <div style="width: 100%;height: 100%;text-align: center;">
+        <h1>Welcome To My Blog</h1>
+    </div>
+</div>
+
+@{ 
+    for(int i=0; i<articles.Count(); i++)
+    {
+    <div class="row">
+        <div class="col-md-12">
+            <h2>@articles[i].Title | <span style="font-size: 11px;">@articles[i].Category.Name</span></h2>
+            <p><span style="font-size: 11px;">Posted On: @articles[i].CreatedAt</span></p>
+            <p>
+                @Html.Raw(articles[i].Description)
+            </p>
+            @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Details &raquo;</a></p>*@
+        </div>
+    </div>
+    }
+}

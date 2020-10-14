@@ -1,0 +1,159 @@
+﻿@model BlogApp.Web.Areas.Admin.Models.AddUserModel
+@{
+    ViewBag.Title = "Create";
+    <link href="~/Content/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+}
+
+<div id="content">
+    <div class="container-fluid" style="width:100%;">
+        <!-- Page Heading -->
+        <div>
+            <h1 class="h3 mb-4 text-gray-800">Add Admin</h1>
+            <hr />
+        </div>
+        <div class="mb-5">
+            @using (Html.BeginForm("Create", "Manager", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group row">
+                    <div class="col-md-1">
+                        @Html.LabelFor(m => m.Email)
+                    </div>
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <input type="submit" class="btn btn-primary" id="btn_submit" value="Save" />
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="mt-5">
+            <h1 class="h3 mb-2 mt-5 text-gray-800">Admin Table</h1>
+            <hr />
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Admin Information</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>PhoneNumber</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>PhoneNumber</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="modal-default" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Category</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                @using (Html.BeginForm("Delete", "Category", FormMethod.Post, new { id = "dlt_form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id, new { id = "deltebtn" })
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn_delete" class="btn btn-primary">Yes, Delete!</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section PageScript
+{
+    <!-- Page level plugins -->
+    <script src="~/Content/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#dataTable').DataTable({
+                "ajax": {
+                    "url": "/Admin/Manager/GetAdminUser",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "Email" },
+                    {
+                        "data": "PhoneNumber",
+                        "defaultContent": "N/A"
+                    }
+                ]
+            });
+        });
+
+        $('#dataTable').on('click', '.show-bs-modal', function (event) {
+            var id = $(this).data("id");
+            var modal = $('#modal-default');
+            modal.find('.modal-body p').text("Are you sure want to delete this record?")
+            $('#deltebtn').val(id);
+            modal.modal('show');
+        });
+
+        $('#btn_delete').click(function () {
+            $('#dlt_form').submit();
+        });
+
+        function LoadInfo(id) {
+            if (id != null) {
+                $(window).scrollTop(0);
+                var json = { id: Number.parseInt(id) };
+                $.ajax({
+                    url: '@Url.Action("GetCategoryById", "Category")',
+                    type: "POST",
+                    data: json,
+                    dataType: "json",
+                    success: function (result) {
+                        console.log(result);
+                        $('#Id').val(result.Id);
+                        $('#Name').val(result.Name);
+
+                        $('#btn_submit').val('Update');
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        }
+    </script>
+
+
+    <!-- Page level custom scripts -->
+    <script src="~/Content/admin/js/demo/datatables-demo.js"></script>
+
+}
+
