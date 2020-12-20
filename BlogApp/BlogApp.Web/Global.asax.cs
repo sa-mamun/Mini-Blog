@@ -1,3 +1,6 @@
+using Autofac;
+using Autofac.Integration.Mvc;
+using BlogApp.Core;
 using BlogApp.Web.Models;
 using BlogApp.Web.SeedHelper;
 using System;
@@ -20,6 +23,13 @@ namespace BlogApp.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ApplicationDbContext context = new ApplicationDbContext();
             IdentityHelper.SeedIdentities(context);
+
+            // Autofac Configuratoin
+            var builder = new ContainerBuilder();
+            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterModule<FrameworkModule>();
+            var container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }
 }

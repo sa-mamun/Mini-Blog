@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BlogApp.Web.Areas.Admin.Models
 {
@@ -17,7 +18,17 @@ namespace BlogApp.Web.Areas.Admin.Models
         public virtual String Name { get; set; }
         public virtual IList<Article> Articles { get; set; }
 
-        private readonly ICategoryService _categoryService = new CategoryService();
+        private readonly ICategoryService _categoryService;
+
+        public AddCategoryModel()
+        {
+            _categoryService = DependencyResolver.Current.GetService<ICategoryService>();
+        }
+
+        public AddCategoryModel(ICategoryService categoryService)
+        {
+            _categoryService = categoryService;
+        }
 
         public void AddCategory()
         {

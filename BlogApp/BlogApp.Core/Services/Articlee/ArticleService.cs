@@ -11,7 +11,12 @@ namespace BlogApp.Core.Services.Articlee
 {
     public class ArticleService : IArticleService
     {
-        private readonly Repository<Article> _repository = new Repository<Article>();
+        private readonly IRepository<Article> _repository;
+
+        public ArticleService(IRepository<Article> repository)
+        {
+            _repository = repository;
+        }
 
         public void AddArticle(Article article)
         {

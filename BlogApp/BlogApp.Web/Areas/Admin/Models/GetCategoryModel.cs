@@ -4,12 +4,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BlogApp.Web.Areas.Admin.Models
 {
     public class GetCategoryModel
     {
-        private readonly ICategoryService _categoryService = new CategoryService();
+        private readonly ICategoryService _categoryService;
+
+        public GetCategoryModel()
+        {
+            _categoryService = DependencyResolver.Current.GetService<ICategoryService>();
+        }
+
+        public GetCategoryModel(ICategoryService categoryService)
+        {
+            _categoryService = categoryService;
+        }
 
         public IList<Category> GetCategory()
         {

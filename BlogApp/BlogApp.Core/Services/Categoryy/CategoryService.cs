@@ -11,7 +11,12 @@ namespace BlogApp.Core.Services.Categoryy
 {
     public class CategoryService : ICategoryService
     {
-        private readonly Repository<Category> _repository = new Repository<Category>();
+        private readonly IRepository<Category> _repository;
+
+        public CategoryService(IRepository<Category> repository)
+        {
+            _repository = repository;
+        }
 
         public void AddCategory(Category category)
         {

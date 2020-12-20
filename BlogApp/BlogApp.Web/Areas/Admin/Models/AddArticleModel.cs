@@ -23,14 +23,28 @@ namespace BlogApp.Web.Areas.Admin.Models
         [DataType(DataType.MultilineText)]
         [DisplayName("Description")]
         public virtual string Description { get; set; }
+
         [Required(ErrorMessage = "Please Enter Description")]
         [DisplayName("Catagory")]
         public virtual int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public IEnumerable<Category> items { get; set; }
 
-        private readonly IArticleService _articleService = new ArticleService();
-        private readonly ICategoryService _categoryService = new CategoryService();
+        private readonly IArticleService _articleService;
+        private readonly ICategoryService _categoryService;
+
+        public AddArticleModel()
+        {
+            _categoryService = DependencyResolver.Current.GetService<ICategoryService>();
+            _articleService = DependencyResolver.Current.GetService<IArticleService>();
+        }
+
+        public AddArticleModel(ICategoryService categoryService,
+            IArticleService articleService)
+        {
+            _categoryService = categoryService;
+            _articleService = articleService;
+        }
 
         public void AddArticle()
         {

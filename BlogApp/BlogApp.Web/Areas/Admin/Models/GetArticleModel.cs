@@ -5,13 +5,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BlogApp.Web.Areas.Admin.Models
 {
     public class GetArticleModel
     {
-        private readonly ICategoryService _categoryService = new CategoryService();
-        private readonly IArticleService _articleService = new ArticleService();
+        private readonly ICategoryService _categoryService;
+        private readonly IArticleService _articleService;
+
+        public GetArticleModel()
+        {
+            _categoryService = DependencyResolver.Current.GetService<ICategoryService>();
+            _articleService = DependencyResolver.Current.GetService<IArticleService>();
+        }
+
+        public GetArticleModel(ICategoryService categoryService,
+            IArticleService articleService)
+        {
+            _categoryService = categoryService;
+            _articleService = articleService;
+        }
 
         public IList<Category> GetAllCategory()
         {
