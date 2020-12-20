@@ -23,12 +23,7 @@ namespace BlogApp.Core.Settings.DbConnection
             }
 
             FluentConfiguration _config = Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2012.ConnectionString(
-                    x => x.Server(@"DESKTOP-6OO9DT5\SHAMIM")
-                    .Username("demo")
-                    .Password("123456")
-                    .Database("BlogTestOne")))
-
+                .Database(MsSqlConfiguration.MsSql2012.ConnectionString(x => x.FromConnectionStringWithKey("DefaultConnection")))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ArticleMapping>())
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CategoryMapping>())
                 .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true));

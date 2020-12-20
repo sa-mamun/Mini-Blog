@@ -38,3 +38,23 @@ D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csproj
 D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csproj.CopyComplete
 D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.dll
 D:\NHibernate_Test\New folder\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.pdb
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.dll.config
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.dll
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\BlogApp.Core.pdb
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\Antlr3.Runtime.dll
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\FluentNHibernate.dll
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\Iesi.Collections.dll
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\NHibernate.dll
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.dll
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.EagerFetching.dll
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\Antlr3.Runtime.xml
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\FluentNHibernate.xml
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\Iesi.Collections.xml
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\NHibernate.xml
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.xml
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\bin\Debug\Remotion.Linq.EagerFetching.xml
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csprojAssemblyReference.cache
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csproj.CoreCompileInputs.cache
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.csproj.CopyComplete
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.dll
+D:\Github_Project\OSL_Task\Mini-Blog\BlogApp\BlogApp.Core\obj\Debug\BlogApp.Core.pdb
