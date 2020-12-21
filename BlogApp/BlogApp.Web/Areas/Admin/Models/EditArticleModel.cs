@@ -55,6 +55,7 @@ namespace BlogApp.Web.Areas.Admin.Models
                 Id = article.Id;
                 Title = article.Title;
                 Description = article.Description;
+                CategoryId = article.Category.Id;
                 Category = category;
             }
         }

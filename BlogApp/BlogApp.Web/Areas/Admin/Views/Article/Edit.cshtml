@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Edit Article";
     List<BlogApp.Core.Entities.Category> categories = ViewBag.Category;
+    var selectedItem = ViewBag.SelectedItem;
 }
 
 @if (ViewBag.Message != null)
@@ -49,7 +50,7 @@
                         @Html.LabelFor(m => m.CategoryId)
                     </div>
                     <div class="col-md-5">
-                        @Html.DropDownListFor(m => m.CategoryId, new SelectList(categories, "Id", "Name"), new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.CategoryId, new SelectList(categories, "Id", "Name", selectedItem), new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.CategoryId, "", new { @class = "text-danger" })
                     </div>
                 </div>

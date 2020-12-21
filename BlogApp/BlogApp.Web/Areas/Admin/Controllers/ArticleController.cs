@@ -70,6 +70,7 @@ namespace BlogApp.Web.Areas.Admin.Controllers
             var getArticleModel = new GetArticleModel();
             var categoryList = getArticleModel.GetAllCategory();
             ViewBag.Category = categoryList;
+            ViewBag.SelectedItem = model.CategoryId;
             return View(model);
         }
 
